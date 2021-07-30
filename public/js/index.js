@@ -29,7 +29,7 @@ function populateTable() {
   tbody.innerHTML = "";
 
   transactions.forEach(transaction => {
-    // create and populate a table row
+    // creates & populates a table 
     let tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${transaction.name}</td>
@@ -41,23 +41,23 @@ function populateTable() {
 }
 
 function populateChart() {
-  // copy array and reverse it
+  // copy that array and missy elliot (reverse it)
   let reversed = transactions.slice().reverse();
   let sum = 0;
 
-  // create date labels for chart
+  // makes the date labels for our chart
   let labels = reversed.map(t => {
     let date = new Date(t.date);
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   });
 
-  // create incremental values for chart
+  // incremental values
   let data = reversed.map(t => {
     sum += parseInt(t.value);
     return sum;
   });
 
-  // remove old chart if it exists
+  // remove old chart. fresh starts are good.
   if (myChart) {
     myChart.destroy();
   }
@@ -83,7 +83,7 @@ function sendTransaction(isAdding) {
   let amountEl = document.querySelector("#t-amount");
   let errorEl = document.querySelector(".form .error");
 
-  // validate form
+  // validation
   if (nameEl.value === "" || amountEl.value === "") {
     errorEl.textContent = "Missing Information";
     return;
@@ -92,14 +92,14 @@ function sendTransaction(isAdding) {
     errorEl.textContent = "";
   }
 
-  // create record
+  // record
   let transaction = {
     name: nameEl.value,
     value: amountEl.value,
     date: new Date().toISOString()
   };
 
-  // if subtracting funds, convert amount to negative number
+  // convert amount to negative number when subtracting
   if (!isAdding) {
     transaction.value *= -1;
   }
@@ -107,7 +107,7 @@ function sendTransaction(isAdding) {
   // add to beginning of current array of data
   transactions.unshift(transaction);
 
-  // re-run logic to populate ui with new record
+  // re-run to populate ui 
   populateChart();
   populateTable();
   populateTotal();
@@ -129,13 +129,13 @@ function sendTransaction(isAdding) {
       errorEl.textContent = "Missing Information";
     }
     else {
-      // clear form
+      // clear 
       nameEl.value = "";
       amountEl.value = "";
     }
   })
   .catch(err => {
-    // fetch failed, so save in indexed db
+    // fetch failed
     saveRecord(transaction);
 
     // clear form
