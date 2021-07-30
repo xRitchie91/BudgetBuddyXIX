@@ -25,9 +25,9 @@ After performing a git pull of this repository:
 [Heroku Live]()
 
 ## Contributors
-[Ritchie Ortiz](https://www.GitHub.com/xRitchie91)
-[Peter Martinez](https//www.GitHub.com/Pmarti53)
-[Kyle McKinley](https://www.GitHub.com/kjmckinley)
+- [Ritchie Ortiz](https://www.GitHub.com/xRitchie91)
+- [Peter Martinez](https//www.GitHub.com/Pmarti53)
+- [Kyle McKinley](https://www.GitHub.com/kjmckinley)
 
 ## Contact
 Lets get in touch!
