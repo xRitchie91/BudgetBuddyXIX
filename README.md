@@ -21,7 +21,7 @@ After performing a git pull of this repository:
 
 
 ### Links
-- [GitHub Repo](https://github.com/xRitchie91/BudgetBuddyXIX)
+- [GitHub](https://github.com/xRitchie91/BudgetBuddyXIX)
 - [Heroku Live]()
 
 ## Contributors
